@@ -4,7 +4,7 @@ import pandas as pd
 
 names = [ 
     'UtcTime'   , # UTC Time (datetime64[ns])
-    'EventID'   , # EventID + 0x800 0000(MSB)
+    'EventID'   , # EventID + 0x8000 0000(MSB)
     'NtrgLck'   , # Number of issued Trigger Acknowledge
     'NclkPps'   , # System clock count at GpsPPS received (50MHz)
     'NclkRaw'   , # System clock count (50MHz)
@@ -62,7 +62,7 @@ names = [
 dtype = { 
     # 'UtcTime'   : datetime64[ns], # UTC Time (datetime64[ns])
     'UtcTime'   : np.uint64, # UTC Time (datetime64[ns])
-    'EventID'   : np.uint32, # EventID + 0x800 0000(MSB)
+    'EventID'   : np.uint32, # EventID + 0x8000 0000(MSB)
     'NtrgLck'   : np.uint32, # Number of issued Trigger Acknowledge
     'NclkPps'   : np.uint32, # System clock count at GpsPPS received (50MHz)
     'NclkRaw'   : np.uint32, # System clock count (50MHz)
@@ -119,7 +119,7 @@ dtype = {
 
 offset = { 
     'UtcTime'   :   0, # UTC Time (datetime64[ns])
-    'EventID'   :   2, # EventID + 0x800 0000(MSB)
+    'EventID'   :   2, # EventID + 0x8000 0000 (MSB)
     'NtrgLck'   :   2, # Number of issued Trigger Acknowledge
     'NclkPps'   :   4, # System clock count at GpsPPS received (50MHz)
     'NclkRaw'   :   6, # System clock count (50MHz)
